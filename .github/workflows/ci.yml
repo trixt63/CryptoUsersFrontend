@@ -1,0 +1,59 @@
+name: Continuous Integration
+
+on:
+  pull_request:
+    paths-ignore:
+      - 'README.md'
+  push:
+    branches:
+      - 'develop'
+      - 'main'
+      - 'release'
+    paths-ignore:
+      - 'README.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        # run: echo "::set-output name=dir::$(yarn cache dir)"
+        run: echo "dir=$(yarn cache dir)" >> $GITHUB_OUTPUT
+
+      - name: Get cache
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            ${{ steps.yarn-cache-dir-path.outputs.dir }}
+            ${{ github.workspace }}/.next/cache
+          # Generate a new cache whenever packages or source files change.
+          key:
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+            # If source files changed but packages didn't, rebuild from a prior cache.
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}-
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run lint
+        run: yarn lint:check
+
+      - name: Build
+        env:
+          CI: false
+        run: cp ./configs/.env.staging .env && yarn build
+
+      # - name: Run tests
+      #   run: yarn run test:unit
