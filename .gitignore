@@ -34,5 +34,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
 .eslintcache
+
+# jetbrains
+./idea
