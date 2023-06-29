@@ -1,3 +1,6 @@
+import { ServerPagination } from '..';
+
+// APIs
 export type ApiTransaction = {
   type: 'transaction';
   hash: string;
@@ -98,4 +101,50 @@ export type ApiHomeIntro = {
   tokens: HomeTokenItem[];
   spots: HomeSpotItem[];
   derivatives: HomeDerivativeItem[];
+};
+
+// Rankings
+
+export type ApiDappRanking = {
+  id: string;
+  type: string;
+  name: string;
+  imgUrl: string;
+  category: string;
+  chains: Array<string>;
+  tvl: number;
+  tvlChangeRate: number;
+  numberOfUsers: number;
+  numberOfTransactions: number;
+};
+export type FetchDappsRankingParams = ServerPagination & {
+  chain?: string;
+  category?: string;
+  duration?: number;
+};
+export type FetchDappsRankingResponse = {
+  numberOfDocs: number;
+  docs: Array<ApiDappRanking>;
+};
+
+export type ApiSpotExchangesRanking = {
+  id: string;
+  type: string;
+  name: string;
+  imgUrl: string;
+  volume: number;
+  volumeChangeRate: number;
+  avgLiquidity: number;
+  numberOfMarkets: number;
+  numberOfCoins: number;
+  fiatSupported?: string[] | null;
+  // volumeHistory: {
+  //   [timestamp: string]: number;
+  // };
+  volumeHistoryGraph: string;
+  volumeHistoryGraphIsUp: boolean;
+};
+export type FetchSpotExchangesRankingResponse = {
+  numberOfDocs: number;
+  docs: Array<ApiSpotExchangesRanking>;
 };

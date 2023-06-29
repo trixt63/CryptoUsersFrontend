@@ -1,22 +1,13 @@
 import { createContext, useContext } from 'react';
-import { ApiHomeIntro, ApiHomeStatistic } from 'src/services/home-api/data-types';
-import {
-  FetchDappsRankingResponse,
-  FetchDerivativeExchangesRankingResponse,
-  FetchNFTsRankingResponse,
-  FetchSpotExchangesRankingResponse,
-  FetchTokensRankingResponse,
-} from 'src/services/xt-home-api/data-types';
+import { ApiHomeStatistic, FetchDappsRankingResponse, FetchSpotExchangesRankingResponse } from 'src/services/home-api/data-types';
 
 export type HomeData = {
-  intro: ApiHomeIntro;
+  // intro: ApiHomeIntro;
   statistic: ApiHomeStatistic;
-  nfts: FetchNFTsRankingResponse;
-  // defi: FetchDappsRankingResponse;
+  // nfts: FetchNFTsRankingResponse;
   // tokens: FetchTokensRankingResponse;
   // derivatives: FetchDerivativeExchangesRankingResponse;
-
-  defis: FetchDappsSummaryResponse;
+  defi: FetchDappsRankingResponse;
   spots: FetchSpotExchangesRankingResponse;
 };
 

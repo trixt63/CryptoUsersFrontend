@@ -38,6 +38,7 @@ export function TopDeFiTable() {
       category: item.category,
       tvl: item.tvl,
       users: item.numberOfUsers,
+      real_users: item.numberOfUsers,
       txn: item.numberOfTransactions,
     }));
   }, [defi]);
@@ -49,7 +50,7 @@ export function TopDeFiTable() {
           'aria-label': 'Top DeFi',
         }}
         columns={[
-          { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
+          // { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
           {
             title: 'DApp',
             name: 'dapp',
@@ -98,20 +99,27 @@ export function TopDeFiTable() {
             },
           },
           {
-            title: 'TXN',
-            name: 'txn',
-            cellProps: { align: 'right', sx: { pr: 4 } },
+            title: 'Real Users',
+            name: 'real_users',
+            cellProps: { align: 'right' },
             render: (row, key) => {
               return formatNumber(row[key], { fallback: <NoData /> });
             },
           },
+          // {
+          //   title: 'TXN',
+          //   name: 'txn',
+          //   cellProps: { align: 'right', sx: { pr: 4 } },
+          //   render: (row, key) => {
+          //     return formatNumber(row[key], { fallback: <NoData /> });
+          //   },
+          // },
         ]}
         rows={tableData}
       />
     </TableWrapper>
   );
 }
-
 
 export function TopSpotTable() {
   const { spots } = useHomeContext();
@@ -141,7 +149,7 @@ export function TopSpotTable() {
           'aria-label': 'Top Spot Exchanges',
         }}
         columns={[
-          { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
+          // { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
           {
             title: 'Exchange',
             name: 'exchange',
@@ -208,7 +216,6 @@ export function TopSpotTable() {
     </TableWrapper>
   );
 }
-
 
 // export function TopDeFiTable() {
 //   const { defi } = useHomeContext();
