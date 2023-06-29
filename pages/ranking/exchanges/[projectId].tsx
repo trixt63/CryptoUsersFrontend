@@ -5,12 +5,15 @@ import { ProjectContextProvider, ProjectData } from 'src/contexts/project';
 import ExchangeProject from 'src/modules/ranking/project-detail/exchanges/ExchangeProject';
 import { fetchProject } from 'src/services/project-api';
 import { Meta } from 'src/components/Meta';
+import { fetchDashboardTokenHolders } from 'src/services/dashboard-api';
 
 export async function getServerSideProps(
   context: GetServerSidePropsContext
 ): Promise<GetServerSidePropsResult<ProjectData>> {
   const projectId = context.query.projectId as string;
   const chain = context.query.chain as string | undefined;
+  // call random coin holders
+
   try {
     const res = await fetchProject({
       type: 'exchange',
@@ -22,7 +25,7 @@ export async function getServerSideProps(
         id: projectId,
         chain: chain ?? 'all',
         type: 'exchange',
-        ...res,
+        ...res
       },
     };
   } catch (error) {

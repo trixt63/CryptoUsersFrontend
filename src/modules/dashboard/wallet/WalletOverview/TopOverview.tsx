@@ -30,7 +30,7 @@ export default function TopOverview() {
             <Image src={MoneyHandImg} alt="credit score" width={50} height={50} />
             <Box>
               <Typography variant="h4" fontWeight={700} color="secondary.main">
-                {formatNumber(data.balance, { fractionDigits: 4, prefix: '$' })}
+                {formatNumber(data.estimatedBalance, { fractionDigits: 4, prefix: '$' })}
               </Typography>
               <Typography variant="body2" color="text.secondary" fontWeight={500}>
                 Balance

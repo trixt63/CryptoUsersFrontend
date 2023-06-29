@@ -20,7 +20,7 @@ export default function WalletNodeInformation(props: WalletNodeInformationProps)
         />
       </Stack>
       <InformationDetail label="Credit Score:" value={data.creditScore} />
-      <InformationDetail label="Balance:" value={formatNumberAfterComma(data.balance)} />
+      <InformationDetail label="Balance:" value={formatNumberAfterComma(data.estimatedBalance)} />
     </Box>
   );
 }

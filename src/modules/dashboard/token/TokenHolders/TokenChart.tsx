@@ -11,10 +11,10 @@ export default function TokenChart() {
   const chartData = useMemo(() => {
     return data.holders
       .sort((a: ApiTokenHolderType, b: ApiTokenHolderType) => {
-        return b.balance - a.balance;
+        return b.estimatedBalance - a.estimatedBalance;
       })
       .slice(0, 10)
-      .map((item: ApiTokenHolderType) => [item.address, item.balance]);
+      .map((item: ApiTokenHolderType) => [item.address, item.estimatedBalance]);
   }, [data]);
 
   const options = useBarChartConfig(

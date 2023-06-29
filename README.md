@@ -32,3 +32,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 # *Structure Notes:*
 - Homepage: `src/modules/home-v2/introduction/`
 - Detail CEX: `src/modules/ranking/project-detail/exchanges`
+- Call APIs & declare contexts: `src/pages`

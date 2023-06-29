@@ -21,12 +21,12 @@ export default function ScoreHistoryChart() {
 
     Object.entries(data.creditScoreHistory).forEach(([t, v]) => {
       const _t = Number(t) * 1000;
-      x.push([_t, v.balance]);
+      x.push([_t, v.estimatedBalance]);
       y.push([_t, v.creditScore]);
-      minX = Math.min(minX, v.balance);
+      minX = Math.min(minX, v.estimatedBalance);
       minY = Math.min(minY, v.creditScore);
-      maxX = Math.max(maxX, v.balance);
-      maxY = Math.max(maxY, v.balance);
+      maxX = Math.max(maxX, v.estimatedBalance);
+      maxY = Math.max(maxY, v.estimatedBalance);
     });
     return [
       { data: x, min: minX, max: maxX },

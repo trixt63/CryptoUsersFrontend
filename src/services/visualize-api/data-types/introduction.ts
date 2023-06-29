@@ -5,7 +5,7 @@ export type ApiIntroductionWallet = {
   explorerUrls: Array<string>;
   chains: Array<string>;
   creditScore: number;
-  balance: number;
+  estimatedBalance: number;
   dappsValue: number;
 };
 

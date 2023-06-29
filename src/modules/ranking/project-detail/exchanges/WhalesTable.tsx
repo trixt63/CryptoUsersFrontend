@@ -1,19 +1,64 @@
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
+import {
+  Box,
+  BoxProps,
+  Chip,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Typography,
+} from '@mui/material';
 import { compactNumber, formatAddress, formatNumber } from '@travalendingpool/utils';
-import { StyledTableRow } from '../../shared/table';
+import { StyledTableRow } from 'src/modules/dashboard/shared/table';
 import { ApiTokenHolderType } from 'src/services/dashboard-api/data-types';
 import { useMemo } from 'react';
 import { CheckIcon } from 'src/icons';
 import { useDashboardTokenHolders } from 'src/contexts/dashboard';
 import { Link } from 'src/components/primitives/Link';
 import { getEntityUrl } from 'src/utils';
+import { fetchDashboardTokenHolders, fetchDashboardTokenIntro } from 'src/services/dashboard-api';
 
-export default function TokenTable() {
+function Tags(props: BoxProps) {
+  return (
+    <Box
+      {...props}
+      sx={{
+        ...props.sx,
+        '>*:not(:last-of-type)': {
+          mr: 1,
+        },
+      }}
+    />
+  );
+}
+
+// copy from TokenTable
+export default function WhalesTable() {
   const numShow = 25;
-  const { data } = useDashboardTokenHolders();
+  // const { data } = useDashboardTokenHolders();
+  const data = {
+    id: 'binance',
+    numberOfHolders: 784742,
+    numberOfTopHolders: 500,
+    holders: Array(30).fill({
+      id: '0xf977814e90da44bfa03b6295a0616a897441acec',
+      address: '0xf977814e90da44bfa03b6295a0616a897441acec',
+      // "type": "wallet",
+      estimatedBalance: 75034499.975,
+      ownedBy: '0x1111111111111111111111111111111111111111',
+      // "socialNetworks": 'Kathleen_Dav1s',
+      socialNetworks: {
+        telegram: 'https://t.me/binanceexchange',
+        twitter: 'https://twitter.com/binance',
+      },
+    }),
+  };
+
   const sortedData = useMemo(() => {
     return data.holders
-      .sort((a: ApiTokenHolderType, b: ApiTokenHolderType) => {
+      .sort((a, b) => {
         return b.estimatedBalance - a.estimatedBalance;
       })
       .slice(0, numShow);
@@ -25,11 +70,11 @@ export default function TokenTable() {
         <TableHead>
           <StyledTableRow>
             <TableCell>#</TableCell>
-            <TableCell>Address</TableCell>
-            <TableCell>Quantity</TableCell>
-            <TableCell>Value</TableCell>
-            <TableCell>Percentage</TableCell>
-            <TableCell>Contract</TableCell>
+            <TableCell>Wallet</TableCell>
+            <TableCell>Estimated balance</TableCell>
+            <TableCell>Owned by</TableCell>
+            <TableCell>Social accounts</TableCell>
+            {/*<TableCell>Contract</TableCell>*/}
           </StyledTableRow>
         </TableHead>
         <TableBody>
@@ -49,7 +94,7 @@ export default function TokenTable() {
                   className="text-truncate"
                   sx={{ textTransform: 'capitalize', maxWidth: 120 }}
                 >
-                  {index}
+                  {index + 1}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -64,22 +109,22 @@ export default function TokenTable() {
                   </Link>
                 </Typography>
               </TableCell>
+              {/*<TableCell>*/}
+              {/*  <Typography*/}
+              {/*    variant="body1"*/}
+              {/*    className="text-truncate"*/}
+              {/*    sx={{ textTransform: 'capitalize', maxWidth: 120 }}*/}
+              {/*  >*/}
+              {/*    {compactNumber(holder.estimatedBalance)}*/}
+              {/*  </Typography>*/}
+              {/*</TableCell>*/}
               <TableCell>
                 <Typography
                   variant="body1"
                   className="text-truncate"
                   sx={{ textTransform: 'capitalize', maxWidth: 120 }}
                 >
-                  {compactNumber(holder.estimatedBalance)}
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="body1"
-                  className="text-truncate"
-                  sx={{ textTransform: 'capitalize', maxWidth: 120 }}
-                >
-                  {`$${formatNumber(holder.value)}`}
+                  {`$${formatNumber(holder.estimatedBalance)}`}
                 </Typography>
               </TableCell>
               <TableCell>
@@ -89,17 +134,25 @@ export default function TokenTable() {
                   sx={{ textTransform: 'capitalize', maxWidth: 120 }}
                   color="primary"
                 >
-                  {`${formatNumber(holder.percentage, { fractionDigits: 2 })}%`}
+                  {formatAddress(holder.ownedBy)}
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography
-                  variant="body1"
-                  className="text-truncate"
-                  sx={{ textTransform: 'capitalize', maxWidth: 120 }}
-                >
-                  {holder.type === 'contract' ? <CheckIcon /> : ''}
-                </Typography>
+                <Tags>
+                  {Object.entries(holder.socialNetworks).map(([name, link]) => (
+                    <Chip
+                      key={name}
+                      label={name}
+                      color="secondary"
+                      clickable
+                      component={'a'}
+                      href={link}
+                      target={'_blank'}
+                      rel="noopener noreferrer"
+                      sx={{ textTransform: 'capitalize' }}
+                    />
+                  ))}
+                </Tags>
               </TableCell>
             </StyledTableRow>
           ))}
