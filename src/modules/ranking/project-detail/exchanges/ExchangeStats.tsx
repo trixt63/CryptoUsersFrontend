@@ -137,15 +137,15 @@ export default function ExchangeStats() {
           </Grid>
         )}
       </Grid>
-      <Paper sx={{ p: 3, position: 'relative' }} variant="border">
-        <Typography variant="subtitle1" sx={{ position: 'absolute', mt: 1 }}>
-          Historical activities
-        </Typography>
-        <Box sx={{ mt: { xs: 4, sm: 0 } }}>
-          <HighchartsReact highcharts={Highcharts} options={options} />
-        </Box>
-      </Paper>
-      <ProjectRelationship />
+      {/*<Paper sx={{ p: 3, position: 'relative' }} variant="border">*/}
+      {/*  <Typography variant="subtitle1" sx={{ position: 'absolute', mt: 1 }}>*/}
+      {/*    Historical activities*/}
+      {/*  </Typography>*/}
+      {/*  <Box sx={{ mt: { xs: 4, sm: 0 } }}>*/}
+      {/*    <HighchartsReact highcharts={Highcharts} options={options} />*/}
+      {/*  </Box>*/}
+      {/*</Paper>*/}
+      {/*<ProjectRelationship />*/}
     </Box>
   );
 }

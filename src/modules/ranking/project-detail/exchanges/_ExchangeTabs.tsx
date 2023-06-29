@@ -13,15 +13,16 @@ export default function ExchangeTabs() {
   };
   return (
     <Box sx={{ mt: 2 }}>
-      <StyledRankingTab value={activeTab} variant="scrollable" scrollButtons="auto" onChange={handleTabChange}>
-        <Tab value="exchangesStats" label={'Exchanges Stats'} />
-        <Tab value="about" label={'About'} />
-        {smDown && <Tab value="tokens" label={'Tokens'} />}
-      </StyledRankingTab>
+      {/*<StyledRankingTab value={activeTab} variant="scrollable" scrollButtons="auto" onChange={handleTabChange}>*/}
+      {/*  <Tab value="exchangesStats" label={'Exchanges Stats'} />*/}
+      {/*  <Tab value="about" label={'About'} />*/}
+      {/*  {smDown && <Tab value="tokens" label={'Tokens'} />}*/}
+      {/*</StyledRankingTab>*/}
       <Box>
-        {activeTab === 'exchangesStats' && <ExchangeStats />}
-        {activeTab === 'about' && <Box sx={{ mt: 2, color: 'text.secondary' }}>Coming soon...</Box>}
-        {smDown && activeTab === 'tokens' && <ProjectTokens />}
+        <ExchangeStats />
+        {/*{activeTab === 'exchangesStats' && <ExchangeStats />}*/}
+        {/*{activeTab === 'about' && <Box sx={{ mt: 2, color: 'text.secondary' }}>Coming soon...</Box>}*/}
+        {/*{smDown && activeTab === 'tokens' && <ProjectTokens />}*/}
       </Box>
     </Box>
   );

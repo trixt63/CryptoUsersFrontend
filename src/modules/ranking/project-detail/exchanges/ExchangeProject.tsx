@@ -4,8 +4,9 @@ import { useProjectContext } from 'src/contexts/project';
 import ProjectActions from '../components/ProjectActions';
 import { ProjectContent, ProjectSideContent, ProjectTabsWrapper, ProjectWrapper } from '../components/ProjectLayout';
 import ProjectOverview from '../components/ProjectOverview';
-import ProjectTokens from '../components/ProjectTokens';
-import ExchangeTabs from './ExchangeTabs';
+// import ProjectTokens from '../components/ProjectTokens';
+import ExchangeStats from './ExchangeStats';
+// import ExchangeTabs from './ExchangeTabs';
 
 export default function ExchangeProject() {
   const data = useProjectContext();
@@ -23,14 +24,15 @@ export default function ExchangeProject() {
         <ProjectWrapper>
           <ProjectContent>
             <ProjectOverview />
-            <ProjectTabsWrapper>
-              <ExchangeTabs />
-            </ProjectTabsWrapper>
+            {/*<ProjectTabsWrapper>*/}
+            {/*<ExchangeTabs />*/}
+            <ExchangeStats />
+            {/*</ProjectTabsWrapper>*/}
           </ProjectContent>
-          <ProjectSideContent>
-            <ProjectActions />
-            <ProjectTokens />
-          </ProjectSideContent>
+          {/*<ProjectSideContent>*/}
+          {/*  <ProjectActions />*/}
+          {/*  <ProjectTokens />*/}
+          {/*</ProjectSideContent>*/}
         </ProjectWrapper>
       </Container>
     </Box>
