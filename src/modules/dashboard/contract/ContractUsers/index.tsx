@@ -31,7 +31,7 @@ export default function ContractUsers() {
       </Paper>
       <Paper variant="border" sx={{ p: 3, mt: 2 }}>
         <Typography color="secondary.main" mb={2} fontWeight={500}>
-          Top {Math.min(20, data.numberOfUsers)} in total {formatNumber(data.numberOfUsers)}
+          Top {Math.min(20, data.users)} in total {formatNumber(data.users)}
         </Typography>
         <Box sx={{ mx: -3 }}>
           <TopUsersTable />

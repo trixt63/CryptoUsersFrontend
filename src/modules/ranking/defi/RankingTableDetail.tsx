@@ -131,7 +131,7 @@ export default function RankingTableDetail() {
       chains: item.chains,
       tvl: item.tvl,
       tvlChangeRate: item.tvlChangeRate * 100,
-      users: item.numberOfUsers,
+      users: item.users,
       txn: item.numberOfTransactions,
     }));
   }, [data, page, pageSize]);

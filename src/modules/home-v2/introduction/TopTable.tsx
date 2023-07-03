@@ -36,8 +36,8 @@ export function TopCexesTable() {
         imgUrl: item.imgUrl,
       },
       volume: item.spotVolume,
-      numberOfUsers: item.numberOfUsers,
-      numberOfRealUsers: item.numberOfRealUsers,
+      users: item.numberOfUsers,
+      realUsers: item.numberOfRealUsers,
     }));
   }, [cexes]);
 
@@ -108,7 +108,7 @@ export function TopCexesTable() {
   );
 }
 
-export function TopDeFiTable() {
+export function TopDexesTable() {
   const { dexes } = useHomeContext();
 
   const tableData = useMemo(() => {
@@ -122,7 +122,7 @@ export function TopDeFiTable() {
       category: item.category,
       tvl: item.tvl,
       users: item.numberOfUsers,
-      real_users: item.numberOfRealUsers,
+      realUsers: item.numberOfRealUsers,
     }));
   }, [dexes]);
 
@@ -183,7 +183,7 @@ export function TopDeFiTable() {
           },
           {
             title: 'Real Users',
-            name: 'real_users',
+            name: 'realUsers',
             cellProps: { align: 'right' },
             render: (row, key) => {
               return formatNumber(row[key], { fallback: <NoData /> });
@@ -197,6 +197,94 @@ export function TopDeFiTable() {
           //     return formatNumber(row[key], { fallback: <NoData /> });
           //   },
           // },
+        ]}
+        rows={tableData}
+      />
+    </TableWrapper>
+  );
+}
+
+export function TopLendingsTable() {
+  const { lendings } = useHomeContext();
+
+  const tableData = useMemo(() => {
+    return lendings.map((item, idx) => ({
+      id: item.id,
+      rank: idx + 1,
+      dapp: {
+        name: item.name,
+        imgUrl: item.imgUrl,
+      },
+      category: item.category,
+      tvl: item.tvl,
+      users: item.numberOfUsers,
+      realUsers: item.numberOfRealUsers,
+    }));
+  }, [lendings]);
+
+  return (
+    <TableWrapper explorePath="/ranking/defi">
+      <RankingTable
+        tableProps={{
+          'aria-label': 'Top DeFi',
+        }}
+        columns={[
+          // { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
+          {
+            title: 'DApp',
+            name: 'dapp',
+            sticky: true,
+            cellProps: { sx: { fontWeight: 600 } },
+            headProps: { sx: { fontWeight: 500 } },
+            render: (row) => (
+              <Box
+                component={Link}
+                href={`/ranking/defi/${row.id}`}
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  color: 'inherit',
+                  '&:hover': {
+                    color: 'primary.main',
+                  },
+                }}
+              >
+                <Avatar src={row['dapp'].imgUrl} alt={row['dapp'].name} sx={{ width: 28, height: 28, mr: 1.5 }} />
+                {row['dapp'].name}
+              </Box>
+            ),
+          },
+          {
+            title: 'Category',
+            name: 'category',
+            render: (row) => {
+              return row['category'] ?? <NoData />;
+            },
+          },
+          {
+            title: 'TVL',
+            name: 'tvl',
+            cellProps: { align: 'right' },
+            render: (row) => {
+              return isNumeric(row['tvl']) ? '$' + compactNumber(row['tvl']) : <NoData />;
+            },
+          },
+          {
+            title: 'Users',
+            name: 'users',
+            cellProps: { align: 'right' },
+            render: (row, key) => {
+              return formatNumber(row[key], { fallback: <NoData /> });
+            },
+          },
+          {
+            title: 'Real Users',
+            name: 'realUsers',
+            cellProps: { align: 'right' },
+            render: (row, key) => {
+              return formatNumber(row[key], { fallback: <NoData /> });
+            },
+          },
         ]}
         rows={tableData}
       />

@@ -1,7 +1,7 @@
 import { Box, Tab, Tabs as MuiTabs, Theme } from '@mui/material';
 import React, { useState } from 'react';
 import { Range } from 'src/global';
-import { TopDeFiTable, TopCexesTable } from './TopTable';
+import { TopDexesTable, TopCexesTable, TopLendingsTable} from './TopTable';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -73,10 +73,10 @@ export default function ApplicationsTabs() {
         <TopCexesTable />
       </TabPanel>
       <TabPanel index={1} value={activeTab}>
-        <TopDeFiTable />
+        <TopDexesTable />
       </TabPanel>
       <TabPanel index={2} value={activeTab}>
-        <TopDeFiTable />
+        <TopLendingsTable />
       </TabPanel>
     </>
   );
