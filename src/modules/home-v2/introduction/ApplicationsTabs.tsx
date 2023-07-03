@@ -1,7 +1,7 @@
 import { Box, Tab, Tabs as MuiTabs, Theme } from '@mui/material';
 import React, { useState } from 'react';
 import { Range } from 'src/global';
-import { TopDeFiTable, TopSpotTable } from './TopTable';
+import { TopDeFiTable, TopCexesTable } from './TopTable';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -65,14 +65,18 @@ export default function ApplicationsTabs() {
           },
         }}
       >
-        <Tab label="DeFis" {...a11yProps(0)} />
-        <Tab label="CEXes" {...a11yProps(1)} />
+        <Tab label="CEXes" {...a11yProps(0)} />
+        <Tab label="DEXes" {...a11yProps(1)} />
+        <Tab label="Lendings" {...a11yProps(2)} />
       </MuiTabs>
       <TabPanel index={0} value={activeTab}>
-        <TopDeFiTable />
+        <TopCexesTable />
       </TabPanel>
       <TabPanel index={1} value={activeTab}>
-        <TopSpotTable />
+        <TopDeFiTable />
+      </TabPanel>
+      <TabPanel index={2} value={activeTab}>
+        <TopDeFiTable />
       </TabPanel>
     </>
   );

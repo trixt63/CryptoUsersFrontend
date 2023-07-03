@@ -1,38 +1,32 @@
 import FullLayout from 'src/layouts/FullLayout';
 import { HomeContextProvider, HomeData } from 'src/modules/home-v2/context';
 import Introduction from 'src/modules/home-v2/introduction';
-import OurCommunity from 'src/modules/home-v2/OurCommunity';
-import Ranking from 'src/modules/home-v2/ranking';
-import SeeYourRank from 'src/modules/home-v2/SeeYourRank';
-import { fetchHomeIntro, fetchHomeStatistic } from 'src/services/home-api';
-import {
-  fetchDappsRanking,
-  fetchDerivativeExchangesRanking,
-  fetchNFTsRanking,
-  fetchSpotExchangesRanking,
-  fetchTokensRanking,
-} from 'src/services/ranking-api';
+// import OurCommunity from 'src/modules/home-v2/OurCommunity';
+// import Ranking from 'src/modules/home-v2/ranking';
+// import SeeYourRank from 'src/modules/home-v2/SeeYourRank';
+import { fetchHomeIntro, fetchHomeLendings, fetchHomeCexex, fetchHomeDexes } from 'src/services/home-api';
+// import {
+//   fetchDappsRanking,
+//   fetchDerivativeExchangesRanking,
+//   fetchNFTsRanking,
+//   fetchSpotExchangesRanking,
+//   fetchTokensRanking,
+// } from 'src/services/ranking-api';
 import { NextPageWithLayout } from './_app';
 
 export async function getStaticProps() {
-  const [intro, statistic, defi, nfts, tokens, spots, derivatives] = await Promise.all([
+  const [intro, cexes, dexes, lendings] = await Promise.all([
     fetchHomeIntro(),
-    fetchHomeStatistic(),
-    fetchDappsRanking(),
-    fetchNFTsRanking(),
-    fetchTokensRanking(),
-    fetchSpotExchangesRanking(),
-    fetchDerivativeExchangesRanking(),
+    fetchHomeCexex(),
+    fetchHomeDexes(),
+    fetchHomeLendings(),
   ]);
   return {
     props: {
       intro,
-      statistic,
-      defi,
-      nfts,
-      tokens,
-      spots,
-      derivatives,
+      cexes,
+      dexes,
+      lendings,
     },
     revalidate: process.env.NEXT_PUBLIC_TEST_MODE === 'true' ? undefined : 60 * 60, // 1h
   };

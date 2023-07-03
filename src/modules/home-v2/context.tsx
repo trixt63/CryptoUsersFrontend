@@ -1,14 +1,11 @@
 import { createContext, useContext } from 'react';
-import { ApiHomeStatistic, FetchDappsRankingResponse, FetchSpotExchangesRankingResponse } from 'src/services/home-api/data-types';
+import { ApiHomeIntro, FetchHomeCexes, FetchHomeDexes, FetchHomeLendings } from 'src/services/home-api/data-types';
 
 export type HomeData = {
-  // intro: ApiHomeIntro;
-  statistic: ApiHomeStatistic;
-  // nfts: FetchNFTsRankingResponse;
-  // tokens: FetchTokensRankingResponse;
-  // derivatives: FetchDerivativeExchangesRankingResponse;
-  defi: FetchDappsRankingResponse;
-  spots: FetchSpotExchangesRankingResponse;
+  intro: ApiHomeIntro;
+  cexes: FetchHomeCexes;
+  dexes: FetchHomeDexes;
+  lendings: FetchHomeLendings;
 };
 
 export const HomeContext = createContext({} as HomeData);

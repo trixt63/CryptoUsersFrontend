@@ -33,3 +33,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 - Homepage: `src/modules/home-v2/introduction/`
 - Detail CEX: `src/modules/ranking/project-detail/exchanges`
 - Call APIs & declare contexts: `src/pages`
+- Ghep APIs:
+  - Liet ke API o `services/[..]-api/`:
+    - Khai bao kieu trong data-types
+    - Ham goi API trong index
+  - Goi APIs trong `pages/`
+- Neu dung context: phai import API tu `services/` vao `modules/`:
+  - Phai viet file context: import API vao tu `service`

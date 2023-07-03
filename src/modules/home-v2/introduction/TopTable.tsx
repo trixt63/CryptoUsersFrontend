@@ -24,11 +24,101 @@ function TableWrapper({ children, explorePath }: TableWrapperProps) {
   );
 }
 
-export function TopDeFiTable() {
-  const { defi } = useHomeContext();
+export function TopCexesTable() {
+  const { cexes } = useHomeContext();
 
   const tableData = useMemo(() => {
-    return defi.docs.map((item, idx) => ({
+    return cexes.docs.map((item, idx) => ({
+      id: item.id,
+      rank: idx + 1,
+      exchange: {
+        name: item.name,
+        imgUrl: item.imgUrl,
+      },
+      volume: item.spotVolume,
+    }));
+  }, [cexes]);
+
+  return (
+    <TableWrapper explorePath="/ranking/spots">
+      <RankingTable
+        tableProps={{
+          'aria-label': 'Top Spot Exchanges',
+        }}
+        columns={[
+          // { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
+          {
+            title: 'Exchange',
+            name: 'exchange',
+            sticky: true,
+            cellProps: { sx: { fontWeight: 600 } },
+            headProps: { sx: { fontWeight: 500 } },
+            render: (row) => (
+              <Box
+                component={Link}
+                href={`/ranking/exchanges/${row.id}`}
+                sx={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  color: 'inherit',
+                  '&:hover': {
+                    color: 'primary.main',
+                  },
+                }}
+              >
+                <Avatar
+                  src={row['exchange'].imgUrl}
+                  alt={row['exchange'].name}
+                  sx={{ width: 28, height: 28, mr: 1.5 }}
+                />
+                {row['exchange'].name}
+              </Box>
+            ),
+          },
+          {
+            title: 'Trading Volume',
+            name: 'volume',
+            cellProps: { align: 'right' },
+            render: (row) => {
+              return formatNumber(row['volume'].value, { prefix: '$', fractionDigits: 0, fallback: <NoData /> });
+            },
+          },
+          {
+            title: 'Avg. Liquidity',
+            name: 'avgLiquidity',
+            cellProps: { align: 'right' },
+            render: (row) => {
+              return formatNumber(row['avgLiquidity'], { prefix: '$', fractionDigits: 2, fallback: <NoData /> });
+            },
+          },
+          {
+            title: 'Market',
+            name: 'market',
+            cellProps: { align: 'right' },
+            render: (row) => {
+              return formatNumber(row['market'], { fallback: <NoData /> });
+            },
+          },
+          {
+            title: 'Coin',
+            name: 'coin',
+            cellProps: { align: 'right', sx: { pr: 4 } },
+            render: (row) => {
+              return formatNumber(row['coin'], { fallback: <NoData /> });
+            },
+          },
+        ]}
+        rows={tableData}
+      />
+    </TableWrapper>
+  );
+}
+
+export function TopDeFiTable() {
+  const { dexes } = useHomeContext();
+
+  const tableData = useMemo(() => {
+    return dexes.docs.map((item, idx) => ({
       id: item.id,
       rank: idx + 1,
       dapp: {
@@ -41,7 +131,7 @@ export function TopDeFiTable() {
       real_users: item.numberOfUsers,
       txn: item.numberOfTransactions,
     }));
-  }, [defi]);
+  }, [dexes]);
 
   return (
     <TableWrapper explorePath="/ranking/defi">
@@ -114,102 +204,6 @@ export function TopDeFiTable() {
           //     return formatNumber(row[key], { fallback: <NoData /> });
           //   },
           // },
-        ]}
-        rows={tableData}
-      />
-    </TableWrapper>
-  );
-}
-
-export function TopSpotTable() {
-  const { spots } = useHomeContext();
-
-  const tableData = useMemo(() => {
-    return spots.docs.map((item, idx) => ({
-      id: item.id,
-      rank: idx + 1,
-      exchange: {
-        name: item.name,
-        imgUrl: item.imgUrl,
-      },
-      volume: {
-        value: item.volume,
-        changeRate: item.volumeChangeRate * 100,
-      },
-      avgLiquidity: item.avgLiquidity,
-      market: item.numberOfMarkets,
-      coin: item.numberOfCoins,
-    }));
-  }, [spots]);
-
-  return (
-    <TableWrapper explorePath="/ranking/spots">
-      <RankingTable
-        tableProps={{
-          'aria-label': 'Top Spot Exchanges',
-        }}
-        columns={[
-          // { title: 'Rank', name: 'rank', cellProps: { width: 80, align: 'center' } },
-          {
-            title: 'Exchange',
-            name: 'exchange',
-            sticky: true,
-            cellProps: { sx: { fontWeight: 600 } },
-            headProps: { sx: { fontWeight: 500 } },
-            render: (row) => (
-              <Box
-                component={Link}
-                href={`/ranking/exchanges/${row.id}`}
-                sx={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  color: 'inherit',
-                  '&:hover': {
-                    color: 'primary.main',
-                  },
-                }}
-              >
-                <Avatar
-                  src={row['exchange'].imgUrl}
-                  alt={row['exchange'].name}
-                  sx={{ width: 28, height: 28, mr: 1.5 }}
-                />
-                {row['exchange'].name}
-              </Box>
-            ),
-          },
-          {
-            title: 'Trading Volume',
-            name: 'volume',
-            cellProps: { align: 'right' },
-            render: (row) => {
-              return formatNumber(row['volume'].value, { prefix: '$', fractionDigits: 0, fallback: <NoData /> });
-            },
-          },
-          {
-            title: 'Avg. Liquidity',
-            name: 'avgLiquidity',
-            cellProps: { align: 'right' },
-            render: (row) => {
-              return formatNumber(row['avgLiquidity'], { prefix: '$', fractionDigits: 2, fallback: <NoData /> });
-            },
-          },
-          {
-            title: 'Market',
-            name: 'market',
-            cellProps: { align: 'right' },
-            render: (row) => {
-              return formatNumber(row['market'], { fallback: <NoData /> });
-            },
-          },
-          {
-            title: 'Coin',
-            name: 'coin',
-            cellProps: { align: 'right', sx: { pr: 4 } },
-            render: (row) => {
-              return formatNumber(row['coin'], { fallback: <NoData /> });
-            },
-          },
         ]}
         rows={tableData}
       />
