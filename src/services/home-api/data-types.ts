@@ -22,6 +22,8 @@ export type ApiHomeCex = {
   tvl: number;
   links: object;
   socialAccounts: object;
+  numberOfUsers: number;
+  numberOfRealUsers: number;
 };
 
 export type FetchHomeCexes = {
@@ -34,10 +36,13 @@ export type ApiHomeDex = {
   id: string;
   name: string;
   imgUrl: string;
+  category: string;
   dexVolume: number;
   tvl: number;
   links: object;
   socialAccounts: object;
+  numberOfUsers: number;
+  numberOfRealUsers: number;
 };
 
 export type FetchHomeDexes = {
@@ -50,10 +55,13 @@ export type ApiHomeLendings = {
   id: string;
   name: string;
   imgUrl: string;
+  category: string;
   dexVolume: number;
   tvl: number;
   links: object;
   socialAccounts: object;
+  numberOfUsers: number;
+  numberOfRealUsers: number;
 };
 
 export type FetchHomeLendings = {

@@ -28,7 +28,7 @@ export function TopCexesTable() {
   const { cexes } = useHomeContext();
 
   const tableData = useMemo(() => {
-    return cexes.docs.map((item, idx) => ({
+    return cexes.map((item, idx) => ({
       id: item.id,
       rank: idx + 1,
       exchange: {
@@ -36,11 +36,13 @@ export function TopCexesTable() {
         imgUrl: item.imgUrl,
       },
       volume: item.spotVolume,
+      numberOfUsers: item.numberOfUsers,
+      numberOfRealUsers: item.numberOfRealUsers,
     }));
   }, [cexes]);
 
   return (
-    <TableWrapper explorePath="/ranking/spots">
+    <TableWrapper explorePath="/homepage/cexes">
       <RankingTable
         tableProps={{
           'aria-label': 'Top Spot Exchanges',
@@ -80,33 +82,25 @@ export function TopCexesTable() {
             name: 'volume',
             cellProps: { align: 'right' },
             render: (row) => {
-              return formatNumber(row['volume'].value, { prefix: '$', fractionDigits: 0, fallback: <NoData /> });
+              return formatNumber(row['volume'], { prefix: '$', fractionDigits: 0, fallback: <NoData /> });
             },
           },
           {
-            title: 'Avg. Liquidity',
-            name: 'avgLiquidity',
+            title: 'Users',
+            name: 'numberOfUsers',
             cellProps: { align: 'right' },
             render: (row) => {
-              return formatNumber(row['avgLiquidity'], { prefix: '$', fractionDigits: 2, fallback: <NoData /> });
+              return formatNumber(row['numberOfUsers'], { fallback: <NoData /> });
             },
           },
           {
-            title: 'Market',
-            name: 'market',
+            title: 'Real Users',
+            name: 'numberOfRealUsers',
             cellProps: { align: 'right' },
             render: (row) => {
-              return formatNumber(row['market'], { fallback: <NoData /> });
+              return formatNumber(row['numberOfRealUsers'], { fallback: <NoData /> });
             },
-          },
-          {
-            title: 'Coin',
-            name: 'coin',
-            cellProps: { align: 'right', sx: { pr: 4 } },
-            render: (row) => {
-              return formatNumber(row['coin'], { fallback: <NoData /> });
-            },
-          },
+          }
         ]}
         rows={tableData}
       />
@@ -118,7 +112,7 @@ export function TopDeFiTable() {
   const { dexes } = useHomeContext();
 
   const tableData = useMemo(() => {
-    return dexes.docs.map((item, idx) => ({
+    return dexes.map((item, idx) => ({
       id: item.id,
       rank: idx + 1,
       dapp: {
@@ -128,8 +122,7 @@ export function TopDeFiTable() {
       category: item.category,
       tvl: item.tvl,
       users: item.numberOfUsers,
-      real_users: item.numberOfUsers,
-      txn: item.numberOfTransactions,
+      real_users: item.numberOfRealUsers,
     }));
   }, [dexes]);
 
