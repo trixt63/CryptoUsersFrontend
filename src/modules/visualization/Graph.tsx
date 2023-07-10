@@ -9,7 +9,7 @@ import useWindowDimensions from 'src/hooks/useWindowDemensions';
 import { useAppDispatch, useAppSelector } from 'src/redux/hook';
 import { fetchVisualizeData } from 'src/redux/visualization/graph-slice';
 import { fetchDashboardIntroductionData } from 'src/redux/visualization/information-nodes-slice';
-import { Link, Node } from 'src/services/visualize-api/data-types';
+import { Link, Node } from 'src/services/_old/visualize-api/data-types';
 import NodesList from './NodesList';
 import VisualizationHeader from './VisualizationHeader';
 

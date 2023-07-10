@@ -7,7 +7,7 @@ import {
   updateStatus as updateStatusAction,
 } from 'src/redux/auth';
 import { useAppDispatch, useAppSelector } from 'src/redux/hook';
-import { checkUser as checkUserApi, login as loginApi } from 'src/services/auth-api';
+import { checkUser as checkUserApi, login as loginApi } from 'src/services/_old/auth-api';
 import { useWeb3React } from 'src/wagmi';
 import useSWRImmutable from 'swr/immutable';
 

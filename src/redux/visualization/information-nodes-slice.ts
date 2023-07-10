@@ -8,7 +8,7 @@ import {
   fetchIntroductionToken,
   fetchIntroductionTransaction,
   fetchIntroductionWallet,
-} from 'src/services/visualize-api';
+} from 'src/services/_old/visualize-api';
 
 export type InformationNodesSlice = {
   introduction: {

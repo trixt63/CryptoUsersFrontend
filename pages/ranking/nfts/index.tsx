@@ -3,7 +3,7 @@ import { NextPageWithLayout } from 'pages/_app';
 import { NFTsRankingData, RankingContextProvider } from 'src/modules/ranking/context';
 import NFTs from 'src/modules/ranking/nfts/NFTs';
 import RankingLayout from 'src/layouts/RankingLayout';
-import { fetchNFTsRanking } from 'src/services/ranking-api';
+import { fetchNFTsRanking } from 'src/services/_old/ranking-api';
 import { getPagination } from 'src/services';
 import FullLayout from 'src/layouts/FullLayout';
 

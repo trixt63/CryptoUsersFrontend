@@ -1,6 +1,6 @@
 import { GetServerSidePropsContext, GetServerSidePropsResult, InferGetServerSidePropsType } from 'next';
-import { fetchExplorerSearch } from 'src/services/search-api';
-import { ApiExplorerSearch } from 'src/services/search-api/data-types';
+import { fetchExplorerSearch } from 'src/services/_old/search-api';
+import { ApiExplorerSearch } from 'src/services/_old/search-api/data-types';
 import { NextPageWithLayout } from './_app';
 
 export async function getServerSideProps(

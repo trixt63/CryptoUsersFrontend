@@ -5,7 +5,7 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider, DashboardTokenTransfersData } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import TokenTransfers from 'src/modules/dashboard/token/TokenTransfers';
-import { fetchDashboardTokenIntro, fetchDashboardTokenTransactions } from 'src/services/dashboard-api';
+import { fetchDashboardTokenIntro, fetchDashboardTokenTransactions } from 'src/services/_old/dashboard-api';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

@@ -5,8 +5,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import WalletOverview from 'src/modules/dashboard/wallet/WalletOverview';
-import { fetchDashboardWalletOverview } from 'src/services/dashboard-api';
-import { ApiDashboardWallet } from 'src/services/dashboard-api/data-types';
+import { fetchDashboardWalletOverview } from 'src/services/_old/dashboard-api';
+import { ApiDashboardWallet } from 'src/services/_old/dashboard-api/data-types';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

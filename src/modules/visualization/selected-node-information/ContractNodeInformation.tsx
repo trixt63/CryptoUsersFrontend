@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { formatNumber } from '@travalendingpool/utils';
-import { ApiIntroductionContract } from 'src/services/visualize-api/data-types/introduction';
+import { ApiIntroductionContract } from 'src/services/_old/visualize-api/data-types/introduction';
 import { InformationDetail, NodeName } from '../components/InformationDetail';
 
 interface ContractNodeInformationProps {

@@ -5,8 +5,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider, DashboardWalletCreditScoreData } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import WalletCreditScore from 'src/modules/dashboard/wallet/WalletCreditScore';
-import { fetchDashboardWalletCreditScore } from 'src/services/dashboard-api';
-import { fetchIntroductionWallet } from 'src/services/visualize-api';
+import { fetchDashboardWalletCreditScore } from 'src/services/_old/dashboard-api';
+import { fetchIntroductionWallet } from 'src/services/_old/visualize-api';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

@@ -7,7 +7,7 @@ import { FetchStatus } from 'src/constants';
 import { useAppDispatch, useAppSelector } from 'src/redux/hook';
 import { setNodeAppearancesStatus, setSelectedNodeId } from 'src/redux/visualization/graph-slice';
 import { fetchDashboardIntroductionData } from 'src/redux/visualization/information-nodes-slice';
-import { Node } from 'src/services/visualize-api/data-types';
+import { Node } from 'src/services/_old/visualize-api/data-types';
 import { getTypeColorNode } from './utils';
 
 interface NodesListProps {

@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import Link from 'next/link';
-import { ApiDashboardAsset } from 'src/services/dashboard-api/data-types';
+import { ApiDashboardAsset } from 'src/services/_old/dashboard-api/data-types';
 import { CapitalizeFirstLetter } from '../../utils';
 
 export default function WalletTracker({ data }: { data?: ApiDashboardAsset | undefined }) {

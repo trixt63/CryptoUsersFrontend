@@ -1,26 +1,26 @@
 import { API_ROOT, API_ROOT_V2 } from 'src/configs/api';
 import fetchJson from 'src/utils/FetchJson';
 import {getApi} from "src/services";
-import { ApiHomeIntro, FetchHomeCexes, FetchHomeDexes, FetchHomeLendings } from './data-types';
+import {ProjectApiParams, ApiCexIntro, ApiCexStats, ApiCexTopWallets} from "src/services/apps-api/cex-api/data-types";
 
 // v2
-export async function fetchHomeIntro() {
-  return await fetchJson<ApiHomeIntro>(`${API_ROOT_V2}/homepage/intro`);
+export async function fetchCexIntro(params: ProjectApiParams) {
+  return await fetchJson<ApiCexIntro>(
+      getApi(`/cex/${params.projectId}/introduction`, {chain: params.chainId})
+);
 }
 
-export async function fetchHomeCexex() {
-  return await fetchJson<FetchHomeCexes>(`${API_ROOT_V2}/homepage/cexes`);
+export async function fetchCexStats(params: ProjectApiParams) {
+  return await fetchJson<ApiCexStats>(
+      getApi(`/cex/${params.projectId}/stats`, {chain: params.chainId})
+  );
 }
 
-export async function fetchHomeDexes() {
-  return await fetchJson<FetchHomeDexes>(`${API_ROOT_V2}/homepage/dexes`);
+export async function fetchCexTopWallets(params: ProjectApiParams) {
+  return await fetchJson<ApiCexIntro>(
+      getApi(`/cex/${params.projectId}/stats`, {chain: params.chainId})
+  );
 }
-
-export async function fetchHomeLendings() {
-  return await fetchJson<FetchHomeLendings>(`${API_ROOT_V2}/homepage/lendings`);
-}
-
-
 // export async function fetchHomeStatistic() {
 //   return await fetchJson<ApiHomeStatistic>(`${API_ROOT_V2}/homepage/statistic`);
 // }

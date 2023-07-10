@@ -6,8 +6,8 @@ import { chainSelectConfigs } from 'src/configs/networkConfig';
 import { DashboardContextProvider } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import OverviewTransaction from 'src/modules/dashboard/transaction/OverviewTransaction';
-import { fetchDashboardTransaction } from 'src/services/dashboard-api';
-import { ApiDashboardTransaction } from 'src/services/dashboard-api/data-types';
+import { fetchDashboardTransaction } from 'src/services/_old/dashboard-api';
+import { ApiDashboardTransaction } from 'src/services/_old/dashboard-api/data-types';
 
 const Overview: NextPageWithLayout<ApiDashboardTransaction> = (props) => {
   return (

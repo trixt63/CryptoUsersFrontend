@@ -28,7 +28,7 @@ export function TopCexesTable() {
   const { cexes } = useHomeContext();
 
   const tableData = useMemo(() => {
-    return cexes.map((item, idx) => ({
+    return cexes.docs.map((item, idx) => ({
       id: item.id,
       rank: idx + 1,
       exchange: {
@@ -112,7 +112,7 @@ export function TopDexesTable() {
   const { dexes } = useHomeContext();
 
   const tableData = useMemo(() => {
-    return dexes.map((item, idx) => ({
+    return dexes.docs.map((item, idx) => ({
       id: item.id,
       rank: idx + 1,
       dapp: {
@@ -208,7 +208,7 @@ export function TopLendingsTable() {
   const { lendings } = useHomeContext();
 
   const tableData = useMemo(() => {
-    return lendings.map((item, idx) => ({
+    return lendings.docs.map((item, idx) => ({
       id: item.id,
       rank: idx + 1,
       dapp: {

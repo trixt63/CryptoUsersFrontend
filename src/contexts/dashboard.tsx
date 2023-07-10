@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { createContext, useContext } from 'react';
-import { fetchDashboardWalletOverview } from 'src/services/dashboard-api';
+import { fetchDashboardWalletOverview } from 'src/services/_old/dashboard-api';
 import {
   ApiDashboardBlock,
   ApiDashboardBlockTransactions,
@@ -15,14 +15,14 @@ import {
   ApiDashboardWalletTransactions,
   ApiDashboardTokenOverview,
   ApiDashBoardTokenIntroduction,
-} from 'src/services/dashboard-api/data-types';
+} from 'src/services/_old/dashboard-api/data-types';
 import {
   ApiDashboardContractOverview,
   ApiDashboardContractTransactions,
   ApiDashboardContractUsers,
-} from 'src/services/dashboard-api/data-types/contract';
+} from 'src/services/_old/dashboard-api/data-types/contract';
 import { Token } from 'src/services/token-health-api/data-types';
-import { ApiIntroductionBlock, ApiIntroductionContract } from 'src/services/visualize-api/data-types/introduction';
+import { ApiIntroductionBlock, ApiIntroductionContract } from 'src/services/_old/visualize-api/data-types/introduction';
 import useSWRImmutable from 'swr/immutable';
 
 export type DashboardTransactionTransfersData = {

@@ -5,8 +5,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider, DashboardContractTransactionsData } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import ContractTransactions from 'src/modules/dashboard/contract/ContractTransactions';
-import { fetchDashboardContractTransactions } from 'src/services/dashboard-api';
-import { fetchIntroductionContract } from 'src/services/visualize-api';
+import { fetchDashboardContractTransactions } from 'src/services/_old/dashboard-api';
+import { fetchIntroductionContract } from 'src/services/_old/visualize-api';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

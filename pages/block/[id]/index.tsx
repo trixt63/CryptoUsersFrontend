@@ -4,8 +4,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import BlockOverview from 'src/modules/dashboard/block/BlockOverview';
-import { fetchDashboardBlock } from 'src/services/dashboard-api';
-import { ApiDashboardBlock } from 'src/services/dashboard-api/data-types';
+import { fetchDashboardBlock } from 'src/services/_old/dashboard-api';
+import { ApiDashboardBlock } from 'src/services/_old/dashboard-api/data-types';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

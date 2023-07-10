@@ -5,7 +5,7 @@ import RankingLayout from 'src/layouts/RankingLayout';
 import { DeFiRankingData, RankingContextProvider } from 'src/modules/ranking/context';
 import DeFi from 'src/modules/ranking/defi/DeFi';
 import { getPagination } from 'src/services';
-import { fetchDappsRanking } from 'src/services/ranking-api';
+import { fetchDappsRanking } from 'src/services/_old/ranking-api';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { chain, c, t } = context.query;

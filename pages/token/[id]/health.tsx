@@ -5,7 +5,7 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider, DashboardTokenHealth } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import TokenHealth from 'src/modules/dashboard/token/TokenHealth';
-import { fetchDashboardTokenIntro } from 'src/services/dashboard-api';
+import { fetchDashboardTokenIntro } from 'src/services/_old/dashboard-api';
 import { fetchTokens } from 'src/services/token-health-api';
 import { Token } from 'src/services/token-health-api/data-types';
 

@@ -6,9 +6,9 @@ import { ProjectContent, ProjectSideContent, ProjectTabsWrapper, ProjectWrapper 
 import ProjectOverview from '../components/ProjectOverview';
 import ExchangeStats from './ExchangeStats';
 import WhalesTable from 'src/modules/ranking/project-detail/exchanges/WhalesTable';
-import { fetchDashboardTokenHolders } from "src/services/dashboard-api";
+import { fetchDashboardTokenHolders } from "src/services/_old/dashboard-api";
 import { useMemo } from "react";
-import { ApiTokenHolderType } from "src/services/dashboard-api/data-types";
+import { ApiTokenHolderType } from "src/services/_old/dashboard-api/data-types";
 import { useDashboardTokenHolders } from "src/contexts/dashboard";
 import TokenTable from "src/modules/dashboard/token/TokenHolders/TokenTable";
 

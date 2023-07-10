@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { compactNumber } from '@travalendingpool/utils';
-import { ApiIntroductionProject } from 'src/services/visualize-api/data-types/introduction';
+import { ApiIntroductionProject } from 'src/services/_old/visualize-api/data-types/introduction';
 import { InformationDetail, NodeName } from '../components/InformationDetail';
 
 interface ProjectNodeInformationProps {

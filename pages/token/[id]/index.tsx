@@ -5,7 +5,7 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider, DashboardTokenOverview } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import TokenOverview from 'src/modules/dashboard/token/TokenOverview';
-import { fetchDashboardToken, fetchDashboardTokenIntro } from 'src/services/dashboard-api';
+import { fetchDashboardToken, fetchDashboardTokenIntro } from 'src/services/_old/dashboard-api';
 import formatNumberAfterComma from 'src/utils';
 
 export async function getServerSideProps(

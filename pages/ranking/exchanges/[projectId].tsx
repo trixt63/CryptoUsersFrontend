@@ -3,9 +3,9 @@ import { NextPageWithLayout } from 'pages/_app';
 import FullLayout from 'src/layouts/FullLayout';
 import { ProjectContextProvider, ProjectData } from 'src/contexts/project';
 import ExchangeProject from 'src/modules/ranking/project-detail/exchanges/ExchangeProject';
-import { fetchProject } from 'src/services/project-api';
+import { fetchProject } from 'src/services/_old/project-api';
 import { Meta } from 'src/components/Meta';
-import { fetchDashboardTokenHolders } from 'src/services/dashboard-api';
+import { fetchDashboardTokenHolders } from 'src/services/_old/dashboard-api';
 
 export async function getServerSideProps(
   context: GetServerSidePropsContext

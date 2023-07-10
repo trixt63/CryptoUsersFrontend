@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { createAsyncThunk, createSlice, SliceCaseReducers } from '@reduxjs/toolkit';
 import { FetchStatus } from 'src/constants';
-import { fetchCreditScore, fetchTokenBalance } from 'src/services/portfolio-api';
-import { FetchCreditScoreResponse, FetchTokenBalanceResponse } from 'src/services/portfolio-api/data-types';
+import { fetchCreditScore, fetchTokenBalance } from 'src/services/_old/portfolio-api';
+import { FetchCreditScoreResponse, FetchTokenBalanceResponse } from 'src/services/_old/portfolio-api/data-types';
 import { logout } from '../auth';
 import { v4 as uuid } from 'uuid';
 

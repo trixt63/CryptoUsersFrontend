@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { createContext, useContext } from 'react';
-import { fetchProject } from 'src/services/project-api';
+import { fetchProject } from 'src/services/_old/project-api';
 import {
   ApiProjectDeFiStats,
   ApiProjectExchangeStats,
   ApiProjectNFTStats,
   ProjectType,
-} from 'src/services/project-api/data-types';
+} from 'src/services/_old/project-api/data-types';
 
 export type ProjectData = Awaited<ReturnType<typeof fetchProject>> & {
   id: string;

@@ -10,7 +10,7 @@ import {
   ApiIntroductionProject,
   ApiIntroductionToken,
   ApiIntroductionWallet,
-} from 'src/services/visualize-api/data-types/introduction';
+} from 'src/services/_old/visualize-api/data-types/introduction';
 import ContractNodeInformation from './ContractNodeInformation';
 import ProjectNodeInformation from './ProjectNodeInformation';
 import TokenNodeInformation from './TokenNodeInformation';

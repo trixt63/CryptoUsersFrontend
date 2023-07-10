@@ -5,8 +5,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import ContractOverview from 'src/modules/dashboard/contract/ContractOverview';
-import { fetchDashboardContract } from 'src/services/dashboard-api';
-import { ApiDashboardContractOverview } from 'src/services/dashboard-api/data-types/contract';
+import { fetchDashboardContract } from 'src/services/_old/dashboard-api';
+import { ApiDashboardContractOverview } from 'src/services/_old/dashboard-api/data-types/contract';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

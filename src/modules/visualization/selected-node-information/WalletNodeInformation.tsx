@@ -1,6 +1,6 @@
 import { Box, Stack } from '@mui/material';
 import Copy from 'src/components/CopyButton/Copy';
-import { ApiIntroductionWallet } from 'src/services/visualize-api/data-types/introduction';
+import { ApiIntroductionWallet } from 'src/services/_old/visualize-api/data-types/introduction';
 import formatNumberAfterComma from 'src/utils';
 import { InformationDetail, NodeName } from '../components/InformationDetail';
 

@@ -1,4 +1,4 @@
-import { ServerPagination } from '..';
+import { ServerPagination } from '../../index';
 
 export type ApiDappRanking = {
   id: string;

@@ -5,8 +5,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardContextProvider, DashboardWalletMoneyFlowData } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import WalletMoneyFlow from 'src/modules/dashboard/wallet/WalletMoneyFlow';
-import { fetchDashboardWalletMoneyFlow } from 'src/services/dashboard-api';
-import { fetchIntroductionWallet } from 'src/services/visualize-api';
+import { fetchDashboardWalletMoneyFlow } from 'src/services/_old/dashboard-api';
+import { fetchIntroductionWallet } from 'src/services/_old/visualize-api';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

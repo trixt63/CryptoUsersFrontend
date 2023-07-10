@@ -4,7 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import { useMemo } from 'react';
 import { useDashboardTokenHolders } from 'src/contexts/dashboard';
 import useBarChartConfig from 'src/hooks/useBarChartConfig';
-import { ApiTokenHolderType } from 'src/services/dashboard-api/data-types';
+import { ApiTokenHolderType } from 'src/services/_old/dashboard-api/data-types';
 
 export default function TokenChart() {
   const { data, token } = useDashboardTokenHolders();

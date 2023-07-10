@@ -5,7 +5,7 @@ import RankingLayout from 'src/layouts/RankingLayout';
 import { RankingContextProvider, SpotsRankingData } from 'src/modules/ranking/context';
 import Spots from 'src/modules/ranking/spots/Spots';
 import { getPagination } from 'src/services';
-import { fetchSpotExchangesRanking } from 'src/services/ranking-api';
+import { fetchSpotExchangesRanking } from 'src/services/_old/ranking-api';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { t } = context.query;

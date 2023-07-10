@@ -6,8 +6,8 @@ import { chainSelectConfigs } from 'src/configs/networkConfig';
 import { DashboardContextProvider, DashboardTransactionTransfersData } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import TransfersTransaction from 'src/modules/dashboard/transaction/TransfersTransaction';
-import { fetchDashboardTransactionTransfers } from 'src/services/dashboard-api';
-import { fetchIntroductionTransaction } from 'src/services/visualize-api';
+import { fetchDashboardTransactionTransfers } from 'src/services/_old/dashboard-api';
+import { fetchIntroductionTransaction } from 'src/services/_old/visualize-api';
 
 const Transfer: NextPageWithLayout<DashboardTransactionTransfersData> = (props) => {
   return (

@@ -5,7 +5,7 @@ import RankingLayout from 'src/layouts/RankingLayout';
 import { RankingContextProvider, TokensRankingData } from 'src/modules/ranking/context';
 import Tokens from 'src/modules/ranking/tokens/Tokens';
 import { getPagination } from 'src/services';
-import { fetchTokensRanking } from 'src/services/ranking-api';
+import { fetchTokensRanking } from 'src/services/_old/ranking-api';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { t } = context.query;

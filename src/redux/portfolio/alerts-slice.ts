@@ -2,8 +2,8 @@
 
 import { createAsyncThunk, createSlice, SliceCaseReducers } from '@reduxjs/toolkit';
 import { FetchStatus } from 'src/constants';
-import { fetchAlerts } from 'src/services/portfolio-api';
-import { FetchAlertsResponse } from 'src/services/portfolio-api/data-types';
+import { fetchAlerts } from 'src/services/_old/portfolio-api';
+import { FetchAlertsResponse } from 'src/services/_old/portfolio-api/data-types';
 import { logout } from '../auth';
 
 export type AlertsByChain = {

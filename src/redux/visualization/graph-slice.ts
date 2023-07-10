@@ -8,8 +8,8 @@ import {
   fetchGraphToken,
   fetchGraphTransaction,
   fetchGraphWallet,
-} from 'src/services/visualize-api';
-import { ApiVisualize, Link, Node } from 'src/services/visualize-api/data-types';
+} from 'src/services/_old/visualize-api';
+import { ApiVisualize, Link, Node } from 'src/services/_old/visualize-api/data-types';
 
 export type NodeData = {
   [key: string]: Node;

@@ -3,9 +3,9 @@ import { NextPageWithLayout } from 'pages/_app';
 import FullLayout from 'src/layouts/FullLayout';
 import { ProjectContextProvider, ProjectData } from 'src/contexts/project';
 import NFTProject from 'src/modules/ranking/project-detail/nfts/NFTProject';
-import { fetchProject } from 'src/services/project-api';
+import { fetchProject } from 'src/services/_old/project-api';
 import { Meta } from 'src/components/Meta';
-import { ApiProjectNFTStats } from 'src/services/project-api/data-types';
+import { ApiProjectNFTStats } from 'src/services/_old/project-api/data-types';
 import { compactNumber, formatNumber } from '@travalendingpool/utils';
 
 export async function getServerSideProps(

@@ -1,5 +1,5 @@
 import fetchJson from 'src/utils/FetchJson';
-import { getApi } from '..';
+import { getApi } from '../../index';
 import { ApiVisualize } from './data-types';
 import {
   ApiIntroductionBlock,

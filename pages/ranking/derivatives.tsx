@@ -5,7 +5,7 @@ import RankingLayout from 'src/layouts/RankingLayout';
 import { DerivativesRankingData, RankingContextProvider } from 'src/modules/ranking/context';
 import Derivatives from 'src/modules/ranking/derivatives/Derivatives';
 import { getPagination } from 'src/services';
-import { fetchDerivativeExchangesRanking } from 'src/services/ranking-api';
+import { fetchDerivativeExchangesRanking } from 'src/services/_old/ranking-api';
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { t } = context.query;

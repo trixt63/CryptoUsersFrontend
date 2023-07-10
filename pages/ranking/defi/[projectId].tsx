@@ -3,10 +3,10 @@ import { NextPageWithLayout } from 'pages/_app';
 import FullLayout from 'src/layouts/FullLayout';
 import { ProjectContextProvider, ProjectData } from 'src/contexts/project';
 import DeFiProject from 'src/modules/ranking/project-detail/defi/DeFiProject';
-import { fetchProject } from 'src/services/project-api';
+import { fetchProject } from 'src/services/_old/project-api';
 import { Meta } from 'src/components/Meta';
 import { compactNumber } from '@travalendingpool/utils';
-import { ApiProjectDeFiStats } from 'src/services/project-api/data-types';
+import { ApiProjectDeFiStats } from 'src/services/_old/project-api/data-types';
 
 export async function getServerSideProps(
   context: GetServerSidePropsContext

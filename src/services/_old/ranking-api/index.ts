@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import fetchJson from 'src/utils/FetchJson';
-import { getApi, ServerPagination } from '..';
+import { getApi, ServerPagination } from '../../index';
 import {
   FetchDappsRankingParams,
   FetchDappsRankingResponse,

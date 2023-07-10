@@ -12,13 +12,13 @@ import {
 } from '@mui/material';
 import { compactNumber, formatAddress, formatNumber } from '@travalendingpool/utils';
 import { StyledTableRow } from 'src/modules/dashboard/shared/table';
-import { ApiTokenHolderType } from 'src/services/dashboard-api/data-types';
+import { ApiTokenHolderType } from 'src/services/_old/dashboard-api/data-types';
 import { useMemo } from 'react';
 import { CheckIcon } from 'src/icons';
 import { useDashboardTokenHolders } from 'src/contexts/dashboard';
 import { Link } from 'src/components/primitives/Link';
 import { getEntityUrl } from 'src/utils';
-import { fetchDashboardTokenHolders, fetchDashboardTokenIntro } from 'src/services/dashboard-api';
+import { fetchDashboardTokenHolders, fetchDashboardTokenIntro } from 'src/services/_old/dashboard-api';
 
 function Tags(props: BoxProps) {
   return (

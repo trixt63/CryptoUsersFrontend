@@ -5,8 +5,8 @@ import { Meta } from 'src/components/Meta';
 import { DashboardBlockTransactionsData, DashboardContextProvider } from 'src/contexts/dashboard';
 import FullLayout from 'src/layouts/FullLayout';
 import BlockTransactions from 'src/modules/dashboard/block/BlockTransactions';
-import { fetchDashboardBlockTransactions } from 'src/services/dashboard-api';
-import { fetchIntroductionBlock } from 'src/services/visualize-api';
+import { fetchDashboardBlockTransactions } from 'src/services/_old/dashboard-api';
+import { fetchIntroductionBlock } from 'src/services/_old/visualize-api';
 
 export async function getServerSideProps(
   ctx: GetServerSidePropsContext

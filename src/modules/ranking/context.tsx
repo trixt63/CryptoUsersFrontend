@@ -6,7 +6,7 @@ import {
   FetchNFTsRankingResponse,
   FetchSpotExchangesRankingResponse,
   FetchTokensRankingResponse,
-} from 'src/services/ranking-api/data-types';
+} from 'src/services/_old/ranking-api/data-types';
 
 export interface RankingPagination {
   page: number;

@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from '@mui/material';
 import { compactNumber, formatAddress, formatNumber } from '@travalendingpool/utils';
 import { StyledTableRow } from '../../shared/table';
-import { ApiTokenHolderType } from 'src/services/dashboard-api/data-types';
+import { ApiTokenHolderType } from 'src/services/_old/dashboard-api/data-types';
 import { useMemo } from 'react';
 import { CheckIcon } from 'src/icons';
 import { useDashboardTokenHolders } from 'src/contexts/dashboard';
