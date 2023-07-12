@@ -23,9 +23,8 @@ export default function ExchangeProject() {
         />
         <ProjectWrapper>
           <ProjectContent>
-            {/*<ProjectOverview />*/}
-            {/*<ExchangeStats />*/}
             <ExchangeIntro/>
+            <ExchangeStats />
             <Paper variant="border" sx={{ p: 3, mt: 3 }}>
               <Typography>{`Top 25 holders in total ${1000} holders`}</Typography>
               <Box mx={-3}>

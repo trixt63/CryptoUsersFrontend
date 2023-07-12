@@ -20,14 +20,9 @@ export const ProjectContext = createContext({} as ProjectData);
 export const ProjectContextProvider = ProjectContext.Provider;
 
 export const useProjectContext = () => useContext(ProjectContext);
-// breakdown breakdown
-// export const useProjectOverview = () => useProjectContext().overview;
-// export const useProjectDeFiStats = () => useProjectContext().stats as ApiProjectDeFiStats;
-// export const useProjectExchangeStats = () => useProjectContext().stats as ApiProjectExchangeStats;
+// breakdown
 export const useProjectExchangeIntro = () => useProjectContext().intro as ApiCexIntro;
 export const useProjectExchangeStats = () => useProjectContext().stats as ApiCexStats;
-// export const useProjectNFTStats = () => useProjectContext().stats as ApiProjectNFTStats;
-// export const useProjectVisualization = () => useProjectContext().visualization;
 export const useProjectParams = () => {
   const data = useProjectContext();
   return {

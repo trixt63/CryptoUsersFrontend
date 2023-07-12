@@ -5,7 +5,7 @@ import StyledImage from 'src/components/primitives/Image';
 // import { SUPPORTED_CHAINS } from 'src/configs/api';
 // import useSearchParams from 'src/hooks/useSearchParams';
 import { useProjectExchangeIntro, useProjectParams } from 'src/contexts/project';
-import { MobileTabletProjectActions } from './ProjectActions';
+// import { MobileTabletProjectActions } from './ProjectActions';
 
 function MetaLabel(props: TypographyProps) {
   return <Typography {...props} color="text.secondary" sx={{ ...props.sx, minWidth: 80 }} />;
@@ -32,12 +32,12 @@ export default function ExchangeIntro() {
   const mdDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
   const xsmDown = useMediaQuery((theme: Theme) => theme.breakpoints.down('xsm'));
 
-  const type = useMemo(() => {
-    // if (data.projectType === 'defi') return 'DeFi';
-    // if (data.projectType === 'exchange') return 'Exchanges';
-    // if (data.projectType === 'nft') return 'NFTs';
-    return 'Exchange';
-  }, ['exchange']);
+  // const type = useMemo(() => {
+  //   // if (data.projectType === 'defi') return 'DeFi';
+  //   // if (data.projectType === 'exchange') return 'Exchanges';
+  //   // if (data.projectType === 'nft') return 'NFTs';
+  //   return 'Exchange';
+  // }, ['exchange']);
 
   /**
    * This function handles a change in the selected chain and updates the state accordingly.
