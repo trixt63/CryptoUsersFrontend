@@ -40,5 +40,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     - Khai bao kieu trong `data-types.ts`
     - Ham goi API trong `index.ts`
   - Goi APIs trong `pages/`
-- Neu dung context: phai import API tu `services/` vao `modules/`:
-  - Phai viet file context: import API vao tu `service`
+- Neu dung context: 
+  - Dau tien liet ke context. Type cua context se dua vao kieu tra ve cua API (i.e. phai import cac Api vao context)
+  - Dung context o dau thi import vao o do (thuong la dung o `modules/`)
