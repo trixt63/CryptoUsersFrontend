@@ -1,6 +1,6 @@
 export type ProjectApiParams = {
     projectId: string;
-    chainId: string;
+    chain: string | undefined;
 }
 
 // TODO: merge Intro into one API

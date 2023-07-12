@@ -11,7 +11,7 @@ import {
 export type ProjectData = Awaited<ReturnType<typeof fetchProject>> & {
   id: string;
   chain: string;
-  type: ProjectType;
+  // type: ProjectType;
 };
 
 export const ProjectContext = createContext({} as ProjectData);
@@ -29,6 +29,6 @@ export const useProjectParams = () => {
   return {
     id: data.id,
     chain: data.chain,
-    type: data.type,
+    // type: data.type,
   };
 };

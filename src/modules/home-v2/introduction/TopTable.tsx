@@ -87,18 +87,18 @@ export function TopCexesTable() {
           },
           {
             title: 'Users',
-            name: 'numberOfUsers',
+            name: 'users',
             cellProps: { align: 'right' },
             render: (row) => {
-              return formatNumber(row['numberOfUsers'], { fallback: <NoData /> });
+              return formatNumber(row['users'], { fallback: <NoData /> });
             },
           },
           {
             title: 'Real Users',
-            name: 'numberOfRealUsers',
+            name: 'realUsers',
             cellProps: { align: 'right' },
             render: (row) => {
-              return formatNumber(row['numberOfRealUsers'], { fallback: <NoData /> });
+              return formatNumber(row['realUsers'], { fallback: <NoData /> });
             },
           }
         ]}

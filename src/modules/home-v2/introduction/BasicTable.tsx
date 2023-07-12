@@ -22,8 +22,7 @@ export default function BasicTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {
-            Object.entries(intro).map(([key, value]) => (
+          {Object.entries(intro).map(([key, value]) => (
                <TableRow
                 key={key}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

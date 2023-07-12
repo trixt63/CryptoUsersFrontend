@@ -3,7 +3,8 @@ import { NextPageWithLayout } from 'pages/_app';
 import FullLayout from 'src/layouts/FullLayout';
 import { ProjectContextProvider, ProjectData } from 'src/contexts/project';
 import ExchangeProject from 'src/modules/ranking/project-detail/exchanges/ExchangeProject';
-import { fetchProject } from 'src/services/_old/project-api';
+// import { fetchProject } from 'src/services/_old/project-api';
+import {fetchProject} from 'src/services/apps-api/cex-api'
 import { Meta } from 'src/components/Meta';
 import { fetchDashboardTokenHolders } from 'src/services/_old/dashboard-api';
 
@@ -16,7 +17,7 @@ export async function getServerSideProps(
 
   try {
     const res = await fetchProject({
-      type: 'exchange',
+      // type: 'exchange',
       projectId,
       chain,
     });
@@ -24,7 +25,7 @@ export async function getServerSideProps(
       props: {
         id: projectId,
         chain: chain ?? 'all',
-        type: 'exchange',
+        // type: 'exchange',
         ...res
       },
     };
