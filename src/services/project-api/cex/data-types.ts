@@ -10,7 +10,8 @@ export type ApiCexIntro = {
     name: string;
     imgUrl: string;
     url: string;
-    socialNetworks: object
+    socialNetworks: object;
+    chains: Array<string>
 };
 
 export type ApiCexStats = {
