@@ -20,9 +20,10 @@ export type ApiCexStats = {
     users: number;
 };
 
-export type ApiCexTopWallet = {
+export type ApiCexWhalesList = {
+    id: string;
     depositWallets: Array<string>;
     userWallets: Array<string>;
     socialNetworks: object;
 };
-export type FetchedCexTopWallets = Array<ApiCexTopWallet>
+export type FetchedCexWhalesList = Array<ApiCexWhalesList>

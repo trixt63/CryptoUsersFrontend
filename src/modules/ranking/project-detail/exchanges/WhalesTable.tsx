@@ -12,13 +12,11 @@ import {
 } from '@mui/material';
 import { compactNumber, formatAddress, formatNumber } from '@travalendingpool/utils';
 import { StyledTableRow } from 'src/modules/dashboard/shared/table';
-import { ApiTokenHolderType } from 'src/services/_old/dashboard-api/data-types';
 import { useMemo } from 'react';
 import { CheckIcon } from 'src/icons';
-import { useDashboardTokenHolders } from 'src/contexts/dashboard';
 import { Link } from 'src/components/primitives/Link';
 import { getEntityUrl } from 'src/utils';
-import { fetchDashboardTokenHolders, fetchDashboardTokenIntro } from 'src/services/_old/dashboard-api';
+import {useProjectExchangeWhalesList, useProjectParams} from "src/contexts/project";
 
 function Tags(props: BoxProps) {
   return (
@@ -37,32 +35,17 @@ function Tags(props: BoxProps) {
 // copy from TokenTable
 export default function WhalesTable() {
   const numShow = 25;
-  // const { data } = useDashboardTokenHolders();
-  const data = {
-    id: 'binance',
-    numberOfHolders: 784742,
-    numberOfTopHolders: 500,
-    holders: Array(30).fill({
-      id: '0xf977814e90da44bfa03b6295a0616a897441acec',
-      address: '0xf977814e90da44bfa03b6295a0616a897441acec',
-      // "type": "wallet",
-      estimatedBalance: 75034499.975,
-      ownedBy: '0x1111111111111111111111111111111111111111',
-      // "socialNetworks": 'Kathleen_Dav1s',
-      socialNetworks: {
-        telegram: 'https://t.me/binanceexchange',
-        twitter: 'https://twitter.com/binance',
-      },
-    }),
-  };
+  const data = useProjectExchangeWhalesList();
+  const projectParams = useProjectParams();
 
-  const sortedData = useMemo(() => {
-    return data.holders
-      .sort((a, b) => {
-        return b.estimatedBalance - a.estimatedBalance;
-      })
-      .slice(0, numShow);
-  }, [data]);
+  // const sortedData = useMemo(() => {
+  //   return data.holders
+  //     .sort((a, b) => {
+  //       return b.estimatedBalance - a.estimatedBalance;
+  //     })
+  //     .slice(0, numShow);
+  // }, [data]);
+  const sortedData = data;
 
   return (
     <TableContainer>
@@ -70,17 +53,16 @@ export default function WhalesTable() {
         <TableHead>
           <StyledTableRow>
             <TableCell>#</TableCell>
-            <TableCell>Wallet</TableCell>
-            <TableCell>Estimated balance</TableCell>
-            <TableCell>Owned by</TableCell>
+            <TableCell>Deposit wallets</TableCell>
+            <TableCell>User wallets</TableCell>
             <TableCell>Social accounts</TableCell>
             {/*<TableCell>Contract</TableCell>*/}
           </StyledTableRow>
         </TableHead>
         <TableBody>
-          {sortedData?.map((holder, index: number) => (
+          {sortedData?.map((walletsGroup, index: number) => (
             <StyledTableRow
-              key={holder.id}
+              key={walletsGroup.id}
               sx={{
                 '&:not(:first-of-type)': {
                   borderTop: '1px solid',
@@ -94,20 +76,37 @@ export default function WhalesTable() {
                   className="text-truncate"
                   sx={{ textTransform: 'capitalize', maxWidth: 120 }}
                 >
+                  {/*index col*/}
                   {index + 1}
                 </Typography>
               </TableCell>
               <TableCell>
-                <Typography
-                  variant="body1"
-                  className="text-truncate"
-                  sx={{ textTransform: 'capitalize', maxWidth: 120 }}
-                  color="primary"
-                >
-                  <Link variant="body1" underline="hover" href={getEntityUrl(holder)}>
-                    {formatAddress(holder.address)}
-                  </Link>
-                </Typography>
+                {walletsGroup.depositWallets.map((walletAddress: string) => (
+                  <Typography
+                    variant="body1"
+                    className="text-truncate"
+                    sx={{ textTransform: 'capitalize', maxWidth: 120 }}
+                    color="primary"
+                  >
+                       <Link variant="body1" underline="hover" href={getEntityUrl('google.com')}>
+                        {formatAddress(walletAddress)}
+                      </Link>
+                  </Typography>
+                ))}
+              </TableCell>
+              <TableCell>
+                {walletsGroup.userWallets.map((wallet: string) => (
+                  <Typography
+                    variant="body1"
+                    className="text-truncate"
+                    sx={{ textTransform: 'capitalize', maxWidth: 120 }}
+                    color="primary"
+                  >
+                       <Link variant="body1" underline="hover" href={getEntityUrl('google.com')}>
+                        {formatAddress(wallet)}
+                      </Link>
+                  </Typography>
+                ))}
               </TableCell>
               {/*<TableCell>*/}
               {/*  <Typography*/}
@@ -118,28 +117,28 @@ export default function WhalesTable() {
               {/*    {compactNumber(holder.estimatedBalance)}*/}
               {/*  </Typography>*/}
               {/*</TableCell>*/}
-              <TableCell>
-                <Typography
-                  variant="body1"
-                  className="text-truncate"
-                  sx={{ textTransform: 'capitalize', maxWidth: 120 }}
-                >
-                  {`$${formatNumber(holder.estimatedBalance)}`}
-                </Typography>
-              </TableCell>
-              <TableCell>
-                <Typography
-                  variant="body1"
-                  className="text-truncate"
-                  sx={{ textTransform: 'capitalize', maxWidth: 120 }}
-                  color="primary"
-                >
-                  {formatAddress(holder.ownedBy)}
-                </Typography>
-              </TableCell>
+              {/*<TableCell>*/}
+              {/*  <Typography*/}
+              {/*    variant="body1"*/}
+              {/*    className="text-truncate"*/}
+              {/*    sx={{ textTransform: 'capitalize', maxWidth: 120 }}*/}
+              {/*  >*/}
+              {/*    {`$${formatNumber(walletsGroup.estimatedBalance)}`}*/}
+              {/*  </Typography>*/}
+              {/*</TableCell>*/}
+              {/*<TableCell>*/}
+              {/*  <Typography*/}
+              {/*    variant="body1"*/}
+              {/*    className="text-truncate"*/}
+              {/*    sx={{ textTransform: 'capitalize', maxWidth: 120 }}*/}
+              {/*    color="primary"*/}
+              {/*  >*/}
+              {/*    {formatAddress(walletsGroup.ownedBy)}*/}
+              {/*  </Typography>*/}
+              {/*</TableCell>*/}
               <TableCell>
                 <Tags>
-                  {Object.entries(holder.socialNetworks).map(([name, link]) => (
+                  {Object.entries(walletsGroup.socialNetworks).map(([name, link]) => (
                     <Chip
                       key={name}
                       label={name}

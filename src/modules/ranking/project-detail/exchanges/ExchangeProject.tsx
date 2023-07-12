@@ -3,7 +3,7 @@ import Breadcrumbs from 'src/components/BreakCrumbs/BreadCrumbs';
 import { useProjectContext } from 'src/contexts/project';
 // import ProjectActions from '../components/ProjectActions';
 import { ProjectContent, ProjectSideContent, ProjectTabsWrapper, ProjectWrapper } from '../components/ProjectLayout';
-import ProjectOverview from '../components/ProjectOverview';
+// import ProjectOverview from '../components/ProjectOverview';
 import ExchangeStats from './ExchangeStats';
 import ExchangeIntro from './ExchangeIntro'
 import WhalesTable from 'src/modules/ranking/project-detail/exchanges/WhalesTable';

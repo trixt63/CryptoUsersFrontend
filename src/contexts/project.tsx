@@ -8,7 +8,7 @@ import {
   ApiProjectNFTStats,
   ProjectType,
 } from 'src/services/_old/project-api/data-types';
-import {ApiCexIntro, ApiCexStats} from "src/services/project-api/cex/data-types";
+import {ApiCexIntro, ApiCexStats, FetchedCexWhalesList} from "src/services/project-api/cex/data-types";
 
 export type ProjectData = Awaited<ReturnType<typeof fetchCexProject>> & {
   id: string;
@@ -23,6 +23,7 @@ export const useProjectContext = () => useContext(ProjectContext);
 // breakdown
 export const useProjectExchangeIntro = () => useProjectContext().intro as ApiCexIntro;
 export const useProjectExchangeStats = () => useProjectContext().stats as ApiCexStats;
+export const useProjectExchangeWhalesList = () => useProjectContext().topWallets as FetchedCexWhalesList;
 export const useProjectParams = () => {
   const data = useProjectContext();
   return {

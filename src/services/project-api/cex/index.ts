@@ -1,7 +1,7 @@
 import { API_ROOT, API_ROOT_V2 } from 'src/configs/api';
 import fetchJson from 'src/utils/FetchJson';
 import {getApi} from "src/services";
-import {ProjectApiParams, ApiCexIntro, ApiCexStats, FetchedCexTopWallets} from "src/services/project-api/cex/data-types";
+import {ProjectApiParams, ApiCexIntro, ApiCexStats, FetchedCexWhalesList} from "src/services/project-api/cex/data-types";
 
 // v2
 export async function fetchCexIntro(params: ProjectApiParams) {
@@ -16,9 +16,9 @@ export async function fetchCexStats(params: ProjectApiParams) {
   );
 }
 
-export async function fetchCexTopWallets(params: ProjectApiParams) {
-  return await fetchJson<ApiCexIntro>(
-      getApi(`/cex/${params.projectId}/stats`, {chain: params.chain})
+export async function fetchCexWhalesList(params: ProjectApiParams) {
+  return await fetchJson<FetchedCexWhalesList>(
+      getApi(`/cex/${params.projectId}/whales-list`, {chain: params.chain})
   );
 }
 
@@ -26,7 +26,7 @@ export async function fetchCexProject(params: ProjectApiParams) {
   const [intro, stats, topWallets] = await Promise.all([
     fetchCexIntro(params),
     fetchCexStats(params),
-    fetchCexTopWallets(params),
+    fetchCexWhalesList(params),
   ]);
   return {
     intro,
