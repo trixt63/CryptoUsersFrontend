@@ -1,7 +1,8 @@
 import { Box, Container, Hidden } from '@mui/material';
 import { useRouter } from 'next/router';
-import LogoImg from 'public/images/logos/centic_light_horizontal.png';
-import LogoIconImg from 'public/images/logos/centic_light_icon.png';
+// import LogoImg from 'public/images/logos/centic_light_horizontal.png';
+import LogoImg from 'public/images/logos/bitcoin-representative.png';
+import LogoIconImg from 'public/images/logos/bitcoin-representative.png';
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'src/components/primitives/Link';
 import WalletButton from 'src/components/WalletButton';
@@ -34,23 +35,23 @@ const DesktopNav = () => {
         },
       }}
     >
-      <Link
-        className={'nav-item' + (router.pathname.startsWith('/ranking') ? ' active' : '')}
-        href={'/ranking/defi'}
-        variant="body2"
-      >
-        Ranking
-      </Link>
-      <Link
-        className={'nav-item' + (router.pathname.startsWith('/portfolio') ? ' active' : '')}
-        href={'/portfolio/assets'}
-        variant="body2"
-      >
-        Portfolio
-      </Link>
-      <Link className={'nav-item'} rel="nofollow" href={'https://medium.com/@centicio'} variant="body2">
-        Blog
-      </Link>
+      {/*<Link*/}
+      {/*  className={'nav-item' + (router.pathname.startsWith('/ranking') ? ' active' : '')}*/}
+      {/*  href={'/ranking/defi'}*/}
+      {/*  variant="body2"*/}
+      {/*>*/}
+      {/*  Ranking*/}
+      {/*</Link>*/}
+      {/*<Link*/}
+      {/*  className={'nav-item' + (router.pathname.startsWith('/portfolio') ? ' active' : '')}*/}
+      {/*  href={'/portfolio/assets'}*/}
+      {/*  variant="body2"*/}
+      {/*>*/}
+      {/*  Portfolio*/}
+      {/*</Link>*/}
+      {/*<Link className={'nav-item'} rel="nofollow" href={'https://medium.com/@centicio'} variant="body2">*/}
+      {/*  Blog*/}
+      {/*</Link>*/}
     </Box>
   );
 };

@@ -1,5 +1,6 @@
 import { Box, BoxProps, Container, Link, Typography } from '@mui/material';
-import LogoWhiteImg from 'public/images/logos/centic_light_horizontal.png';
+// import LogoWhiteImg from 'public/images/logos/centic_light_horizontal.png';
+import LogoWhiteImg from 'public/images/logos/bitcoin-representative.png';
 
 export default function Footer(props: BoxProps) {
   return (
@@ -31,7 +32,7 @@ export default function Footer(props: BoxProps) {
                 Terms of Service
               </Link>
             </Box> */}
-            <Typography color="text.secondary">Copyright 2021-{new Date().getFullYear()} Centic.</Typography>
+            <Typography color="text.secondary">Copyright 2021-{new Date().getFullYear()}.</Typography>
           </Box>
         </Box>
       </Container>
