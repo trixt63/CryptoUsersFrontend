@@ -5,7 +5,7 @@ import { useProjectContext } from 'src/contexts/project';
 import { ProjectContent, ProjectSideContent, ProjectTabsWrapper, ProjectWrapper } from '../components/ProjectLayout';
 // import ProjectOverview from '../components/ProjectOverview';
 import ExchangeStats from './ExchangeStats';
-import ExchangeIntro from './ExchangeIntro'
+import ExchangeIntro from './ExchangeIntro';
 import WhalesTable from 'src/modules/ranking/project-detail/exchanges/WhalesTable';
 
 export default function ExchangeProject() {

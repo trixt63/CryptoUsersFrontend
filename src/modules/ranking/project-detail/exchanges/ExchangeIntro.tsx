@@ -112,20 +112,6 @@ export default function ExchangeIntro() {
           )}
           <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, mt: 2 }}>
             <Box sx={{ flexGrow: 1 }}>
-              {/*<Box sx={{ display: 'flex', alignItems: 'baseline', mb: 1.5 }}>*/}
-              {/*  <MetaLabel>Rank</MetaLabel>*/}
-              {/*  <Tags>*/}
-              {/*    <Chip label={`#${data.rank} in ${type}`} variant="outlined" color="secondary" />*/}
-              {/*  </Tags>*/}
-              {/*</Box>*/}
-              {/*<Box sx={{ display: 'flex', alignItems: 'baseline', mb: 1.5 }}>*/}
-              {/*  <MetaLabel>Tags</MetaLabel>*/}
-              {/*  <Tags>*/}
-              {/*    {data.tags.map((tag) => (*/}
-              {/*      <Chip key={tag} label={tag} variant="outlined" color="secondary" />*/}
-              {/*    ))}*/}
-              {/*  </Tags>*/}
-              {/*</Box>*/}
               <Box sx={{ display: 'flex', alignItems: 'baseline' }}>
                 <MetaLabel>Social</MetaLabel>
                 <Tags>
@@ -145,11 +131,6 @@ export default function ExchangeIntro() {
                 </Tags>
               </Box>
             </Box>
-            {/*{mdDown && (*/}
-            {/*  <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'flex-end', mt: 2 }}>*/}
-            {/*    <MobileTabletProjectActions />*/}
-            {/*  </Box>*/}
-            {/*)}*/}
           </Box>
         </Box>
       </Box>

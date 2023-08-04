@@ -55,8 +55,7 @@ export default function WhalesTable() {
             <TableCell>#</TableCell>
             <TableCell>Deposit wallets</TableCell>
             <TableCell>User wallets</TableCell>
-            <TableCell>Social accounts</TableCell>
-            {/*<TableCell>Contract</TableCell>*/}
+            {/*<TableCell>Social accounts</TableCell>*/}
           </StyledTableRow>
         </TableHead>
         <TableBody>
@@ -109,50 +108,22 @@ export default function WhalesTable() {
                 ))}
               </TableCell>
               {/*<TableCell>*/}
-              {/*  <Typography*/}
-              {/*    variant="body1"*/}
-              {/*    className="text-truncate"*/}
-              {/*    sx={{ textTransform: 'capitalize', maxWidth: 120 }}*/}
-              {/*  >*/}
-              {/*    {compactNumber(holder.estimatedBalance)}*/}
-              {/*  </Typography>*/}
+              {/*  <Tags>*/}
+              {/*    {Object.entries(walletsGroup.socialNetworks).map(([name, link]) => (*/}
+              {/*      <Chip*/}
+              {/*        key={name}*/}
+              {/*        label={name}*/}
+              {/*        color="secondary"*/}
+              {/*        clickable*/}
+              {/*        component={'a'}*/}
+              {/*        href={link}*/}
+              {/*        target={'_blank'}*/}
+              {/*        rel="noopener noreferrer"*/}
+              {/*        sx={{ textTransform: 'capitalize' }}*/}
+              {/*      />*/}
+              {/*    ))}*/}
+              {/*  </Tags>*/}
               {/*</TableCell>*/}
-              {/*<TableCell>*/}
-              {/*  <Typography*/}
-              {/*    variant="body1"*/}
-              {/*    className="text-truncate"*/}
-              {/*    sx={{ textTransform: 'capitalize', maxWidth: 120 }}*/}
-              {/*  >*/}
-              {/*    {`$${formatNumber(walletsGroup.estimatedBalance)}`}*/}
-              {/*  </Typography>*/}
-              {/*</TableCell>*/}
-              {/*<TableCell>*/}
-              {/*  <Typography*/}
-              {/*    variant="body1"*/}
-              {/*    className="text-truncate"*/}
-              {/*    sx={{ textTransform: 'capitalize', maxWidth: 120 }}*/}
-              {/*    color="primary"*/}
-              {/*  >*/}
-              {/*    {formatAddress(walletsGroup.ownedBy)}*/}
-              {/*  </Typography>*/}
-              {/*</TableCell>*/}
-              <TableCell>
-                <Tags>
-                  {Object.entries(walletsGroup.socialNetworks).map(([name, link]) => (
-                    <Chip
-                      key={name}
-                      label={name}
-                      color="secondary"
-                      clickable
-                      component={'a'}
-                      href={link}
-                      target={'_blank'}
-                      rel="noopener noreferrer"
-                      sx={{ textTransform: 'capitalize' }}
-                    />
-                  ))}
-                </Tags>
-              </TableCell>
             </StyledTableRow>
           ))}
           {sortedData.length === 0 && (
