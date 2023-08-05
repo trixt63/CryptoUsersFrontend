@@ -22,6 +22,6 @@ export type ApiDexStats = {
 
 export type ApiDexTopWalletsList = {
   id: string;
-  wallets: Array<string>;
+  address: Array<string>;
 };
 export type FetchedDexTopWalletsList = Array<ApiDexTopWalletsList>;

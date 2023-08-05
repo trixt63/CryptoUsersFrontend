@@ -4,7 +4,7 @@ import { useProjectContext } from 'src/contexts/project';
 import { ProjectContent, ProjectSideContent, ProjectTabsWrapper, ProjectWrapper } from '../components/ProjectLayout';
 import DexStats from './DexStats';
 import DexIntro from './DexIntro';
-import WhalesTable from './WhalesTable';
+import TopWallets from './TopWallets';
 
 export default function DexProject() {
   const data = useProjectContext();
@@ -27,7 +27,7 @@ export default function DexProject() {
             {/*<Paper variant="border" sx={{ p: 3, mt: 3 }}>*/}
             {/*  <Typography>{`Top 25 holders in total ${1000} holders`}</Typography>*/}
             {/*  <Box mx={-3}>*/}
-            {/*    <WhalesTable />*/}
+                <TopWallets />
             {/*  </Box>*/}
             {/*</Paper>*/}
           </ProjectContent>
