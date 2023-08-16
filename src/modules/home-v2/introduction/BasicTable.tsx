@@ -16,9 +16,9 @@ export default function BasicTable() {
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell align="right">Number of applications</TableCell>
-            <TableCell align="right">Number of users</TableCell>
-            <TableCell align="right">Number of real users</TableCell>
+            <TableCell align="center">Number of applications</TableCell>
+            <TableCell align="center">Number of users</TableCell>
+            {/*<TableCell align="right">Number of real users</TableCell>*/}
           </TableRow>
         </TableHead>
         <TableBody>
@@ -30,9 +30,9 @@ export default function BasicTable() {
                 <TableCell component="th" scope="row">
                   {key}
                 </TableCell>
-                <TableCell align="right">{value.numberOfApplications}</TableCell>
-                <TableCell align="right">{value.numberOfUsers}</TableCell>
-                <TableCell align="right">{value.numberOfRealUsers}</TableCell>
+                <TableCell align="center">{value.numberOfApplications}</TableCell>
+                <TableCell align="center">{value.numberOfUsers}</TableCell>
+                {/*<TableCell align="right">{value.numberOfRealUsers}</TableCell>*/}
               </TableRow>
             ))
           }

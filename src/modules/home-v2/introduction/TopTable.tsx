@@ -93,14 +93,14 @@ export function TopCexesTable() {
               return formatNumber(row['users'], { fallback: <NoData /> });
             },
           },
-          {
-            title: 'Real Users',
-            name: 'realUsers',
-            cellProps: { align: 'right' },
-            render: (row) => {
-              return formatNumber(row['realUsers'], { fallback: <NoData /> });
-            },
-          }
+          // {
+          //   title: 'Real Users',
+          //   name: 'realUsers',
+          //   cellProps: { align: 'right' },
+          //   render: (row) => {
+          //     return formatNumber(row['realUsers'], { fallback: <NoData /> });
+          //   },
+          // }
         ]}
         rows={tableData}
       />
@@ -181,14 +181,14 @@ export function TopDexesTable() {
               return formatNumber(row[key], { fallback: <NoData /> });
             },
           },
-          {
-            title: 'Real Users',
-            name: 'realUsers',
-            cellProps: { align: 'right' },
-            render: (row, key) => {
-              return formatNumber(row[key], { fallback: <NoData /> });
-            },
-          },
+          // {
+          //   title: 'Real Users',
+          //   name: 'realUsers',
+          //   cellProps: { align: 'right' },
+          //   render: (row, key) => {
+          //     return formatNumber(row[key], { fallback: <NoData /> });
+          //   },
+          // },
           // {
           //   title: 'TXN',
           //   name: 'txn',
@@ -277,14 +277,14 @@ export function TopLendingsTable() {
               return formatNumber(row[key], { fallback: <NoData /> });
             },
           },
-          {
-            title: 'Real Users',
-            name: 'realUsers',
-            cellProps: { align: 'right' },
-            render: (row, key) => {
-              return formatNumber(row[key], { fallback: <NoData /> });
-            },
-          },
+          // {
+          //   title: 'Real Users',
+          //   name: 'realUsers',
+          //   cellProps: { align: 'right' },
+          //   render: (row, key) => {
+          //     return formatNumber(row[key], { fallback: <NoData /> });
+          //   },
+          // },
         ]}
         rows={tableData}
       />

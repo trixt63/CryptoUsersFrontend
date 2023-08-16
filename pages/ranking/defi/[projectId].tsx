@@ -41,7 +41,6 @@ const ProjectDetailPage: NextPageWithLayout<ProjectData> = (props: ProjectData) 
     <>
       <ProjectContextProvider value={props}>
         <DexProject />
-        {/*<p>Hello</p>*/}
       </ProjectContextProvider>
     </>
   );
